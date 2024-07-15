@@ -66,6 +66,7 @@ def main_index():
     session['evaluation_data'] = []     # Stores data related to evaluations
     session['temp_df'] = []             # Temporary storage for dataframes
     session['grading_df'] = []          # Storage for grading dataframes
+    session['solution_data'] = []       # Stores data related to solutions
     
     # Flags to indicate the success of file upload and regression analysis
     session['upload_success'] = False   # Indicates if file upload was successful
@@ -455,10 +456,28 @@ def filter_student_solutions(student_files):
 # Function to combine the sample exam data and student exam data for evaluation
 def combine(exam_dataset, student_dataset):
     # Concate the exam_dataset and student_dataset DataFrames
-    evaluation_data = pd.concat([student_dataset, exam_dataset], axis=1)
+    evaluation_data = pd.concat([student_dataset, exam_dataset], axis=1)    
     # Select relevant columns and rename 'Points_student' to 'Points'
     evaluation_data = evaluation_data[['First Name', 'Surname', 'Student ID', 'Question', 'Points', 'Sample Solution',
                                     'Alternative Solution', 'Student Solution']]
+    
+    solution_data = []
+    
+    # Get unique questions
+    unique_questions = evaluation_data['Question'].unique()
+    
+    for question in unique_questions:
+        # Get unique solutions for the current question
+        unique_solutions = evaluation_data[evaluation_data['Question'] == question]['Sample Solution'].unique()
+        
+        # Append to the solution_data list as a dictionary
+        solution_data.append({
+            'Question': question,
+            'Solution': list(unique_solutions)
+        })
+    
+    # Update the solution_data in the session
+    session['solution_data'] = solution_data
 
     # Clean exam_dataset and student_dataset
     exam_dataset = []
@@ -738,6 +757,19 @@ def apply_model_regression():
     # Filter out answers with the highest cosine similarity for each Identification group
     idx = evaluation_data.groupby('Identification')['Cosine Similarity'].idxmax()
     evaluation_data = evaluation_data.loc[idx]
+    
+    # Load solution_data and evaluation_data from session
+    solution_data = session['solution_data']
+    
+    # Convert solution_data to a dictionary for easy lookup
+    solution_dict = {entry['Question']: entry['Solution'][0] if entry['Solution'] else '' for entry in solution_data}
+    
+    # Fill in empty entries in the Solution column
+    for index, row in evaluation_data.iterrows():
+        if row['Solution'] == '':
+            question = row['Question']
+            if question in solution_dict:
+                evaluation_data.at[index, 'Solution'] = solution_dict[question]
 
     # Save the updated evaluation data back to the session
     session['evaluation_data'] = evaluation_data.to_dict()
@@ -756,6 +788,9 @@ def apply_model_regression():
     # Copy evaluation data to temp_df
     temp_df = evaluation_data.copy()
 
+    # filter empty student solutions out of temp_df
+    temp_df = temp_df[temp_df['Student Solution'] != '']
+    
     # Split the data for grading based on the number of rows
     if temp_df.shape[0] < 5:
         grading_df = temp_df.copy()
