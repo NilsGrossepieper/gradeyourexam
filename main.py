@@ -905,6 +905,9 @@ def create_regression(grading_df):
     # Predict the relative points using the trained model
     evaluation_data['Relative Points'] = model.predict(X_eval_poly)
     
+    # Then, set Relative Points to 0 where Student Solution is empty
+    evaluation_data.loc[evaluation_data['Student Solution'] == '', 'Relative Points'] = 0
+    
     # Update the session with the modified evaluation data
     session['evaluation_data'] = evaluation_data.to_dict()
     
