@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta information about the document -->
+    <meta charset="utf-8" />
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=1280, maximum-scale=1.0" />
+
+    <!-- Shortcut icon for the website -->
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/robot-image@2x.png') }}" />
+
+    <!-- Meta tags for Open Graph and Twitter cards -->
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/static/evaluate_exam_style.css" />
+    <link rel="stylesheet" type="text/css" href="/static/styleguide.css" />
+    <link rel="stylesheet" type="text/css" href="/static/globals.css" />
+
+    <!-- Title of the webpage displayed on the browser tab -->
+    <title>Autograder | Evaluate Exam</title>
+</head>
+
+<body style="margin: 0; background: #ffffff">
+    <!-- Hidden input to store the page name -->
+    <input type="hidden" id="anPageName" name="page" value="evaluate-exam-desktop" />
+
+    <!-- Center the container horizontally -->
+    <div class="container-center-horizontal">
+        <div id="evaluate-exam-desktop" class="evaluate-exam-desktop screen">
+
+            <!-- Upload Frame for Sample Solution -->
+            <div class="upload-frame">
+                <form action="{{ url_for('evaluate_exam_index') }}" method="post" enctype="multipart/form-data">
+
+                    <!-- Upload Sample Solution -->
+                    <div class="upload-frame-item">
+                        <div class="instruction">
+                            <h1 class="title valign-text-middle arimo-bold-black-30px">Upload sample solution as a Word file:</h1>
+                        </div>
+                        <div class="upload-box" id="sample-exam-box">
+                            <div class="upload-button">
+                                <label for="sample_exam_file" class="select-f valign-text-middle arimo-bold-black-30px">Select File</label>
+                                <input type="file" id="sample_exam_file" name="sample_exam" accept=".docx" style="display:none" required onchange="handleFileUpload('sample-exam-box')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload Student Exams -->
+                    <div class="upload-frame-item">
+                        <div class="instruction">
+                            <p class="upload-student-exams valign-text-middle arimo-bold-black-30px">Upload student exams as Word files in a folder:</p>
+                        </div>
+                        <div class="upload-box" id="student-exam-box">
+                            <div class="upload-button">
+                                <label for="student_exam_files" class="select-f valign-text-middle arimo-bold-black-30px">Select Folder</label>
+                                <input type="file" id="student_exam_files" name="student_exams" webkitdirectory multiple style="display:none" required onchange="handleFileUpload('student-exam-box')">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload Button -->
+                    <button type="submit" class="add-question-button">
+                        <div class="upload valign-text-middle arimo-bold-black-30px">Upload</div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Choose Grading Scheme -->
+            <div class="instruction">
+                <h2 class="grading-scheme-title valign-text-middle arimo-bold-black-30px">Choose a grading scheme:</h2>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="button-frame arimo-bold-black-30px">
+                <!-- Home Button -->
+                <a href="{{ url_for('main_index') }}" class="button-frame-item home-button">
+                    <div class="text">
+                        <div class="place valign-text-middle">Home</div>
+                    </div>
+                    <img class="bx-home-alt" src="/static/images/home-1.png" alt="bx-home-alt" />
+                    <img class="bx-home-alt-hover" src="/static/images/home-2.png" alt="home-2" />
+                </a>
+
+                <!-- Conditional Buttons based on Upload Success -->
+                {% if upload_success %}
+                <form action="{{ url_for('apply_model_llm') }}" method="POST" class="button-frame-item llm-button" onsubmit="showLoading()">
+                    <button type="submit" class="button-content" style="all: unset; cursor: pointer; display: flex; flex-direction: column; align-items: center;">
+                        <div class="text">
+                            <div class="llm valign-text-middle">LLM</div>
+                        </div>
+                        <img class="robot" src="/static/images/robot-1.png" alt="robot" />
+                        <img class="robot-hover" src="/static/images/robot-2.png" alt="robot-3" />
+                    </button>
+                </form>
+                <form action="{{ url_for('apply_model_regression') }}" method="POST" class="button-frame-item supervised-learning-button" onsubmit="showLoading()">
+                    <button type="submit" class="button-content" style="all: unset; cursor: pointer; display: flex; flex-direction: column; align-items: center;">
+                        <div class="text">
+                            <div class="supervised-learning valign-text-middle">Regression</div>
+                        </div>
+                        <img class="graph-up" src="/static/images/graph-up-1.png" alt="graph-up" />
+                        <img class="graph-up-hover" src="/static/images/graph-up-2.png" alt="graph-up-2" />
+                    </button>
+                </form>
+                {% else %}
+                <!-- Disabled Buttons if Upload Failed -->
+                <div class="button-frame-item llm-button" style="cursor: not-allowed;">
+                    <div class="text">
+                        <div class="llm valign-text-middle">LLM</div>
+                    </div>
+                    <img class="robot" src="{{ url_for('static', filename='images/robot-1.png') }}" alt="robot" />
+                    <img class="robot-hover" src="{{ url_for('static', filename='images/robot-2.png') }}" alt="robot-3" />
+                </div>
+                <div class="button-frame-item supervised-learning-button" style="cursor: not-allowed;">
+                    <div class="text">
+                        <div class="supervised-learning valign-text-middle">Regression</div>
+                    </div>
+                    <img class="graph-up" src="/static/images/graph-up-1.png" alt="graph-up" />
+                    <img class="graph-up-hover" src="/static/images/graph-up-2.png" alt="graph-up-2" />
+                </div>
+                {% endif %}
+
+                <!-- Work in Progress Button -->
+                <div class="button-frame-item work-in-progress-container">
+                    <div class="text">
+                        <div class="place valign-text-middle">WIP</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Data Container for displaying the table -->
+    <div class="data_container">
+        <h2 class="arimo-bold-black-30px">Current Exam Data</h2>
+        <!-- Display the DataFrame as an HTML Table -->
+        <div class="exam-data-table">
+            {{ evaluation_data_html_ready|safe }}
+        </div>
+    </div>
+
+    <!-- Loading symbol (can be a spinner or any other symbol) -->
+    <div id="loading" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:1000;">
+        <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading..." />
+    </div>
+
+    <!-- JavaScript Function for handling file uploads -->
+    <script>
+        function handleFileUpload(boxId) {
+            document.getElementById(boxId).classList.add('uploaded');
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        window.addEventListener('pageshow', function() {
+            document.getElementById('loading').style.display = 'none';
+        });
+
+        // Show loading only for LLM and Regression buttons
+        document.querySelectorAll('.button-frame-item.llm-button, .button-frame-item.supervised-learning-button').forEach(button => {
+            button.addEventListener('submit', showLoading);
+        });
+    </script>
+</body>
+
+</html>

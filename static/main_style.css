@@ -1,0 +1,247 @@
+/* screen - home-desktop */
+
+/* Styling for the main container */
+.home-desktop {
+  background-color: var(--white); /* Set the background color to white */
+  cursor: pointer; /* Change the cursor to pointer */
+  height: 832px; /* Set the height */
+  position: relative; /* Set the position to relative */
+  transition: all 0.2s ease; /* Smooth transition for all properties */
+  width: 1280px; /* Set the width */
+}
+
+/* Common styling for the evaluate and create frames */
+.home-desktop .evaluate-frame,
+.home-desktop .create-frame {
+  align-items: center; /* Center align items */
+  background-color: var(--burnt-orange); /* Set the background color */
+  border: 3px solid var(--black); /* Set the border */
+  border-radius: 30px; /* Set the border radius */
+  box-shadow: 0px 4px 4px #00000040; /* Add box shadow */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Column layout */
+  gap: 10px; /* Gap between items */
+  height: 220px; /* Set the height */
+  justify-content: center; /* Center items */
+  padding: 10px; /* Padding inside the frame */
+  position: absolute; /* Set the position to absolute */
+  width: 220px; /* Set the width */
+  transition: all 0.2s ease; /* Smooth transition for all properties */
+}
+
+/* Positioning for the evaluate frame */
+.home-desktop .evaluate-frame {
+  left: 1000px; /* Position from the left */
+  top: 580px; /* Position from the top */
+}
+
+/* Positioning for the create frame */
+.home-desktop .create-frame {
+  left: 700px; /* Position from the left */
+  top: 580px; /* Position from the top */
+}
+
+/* Styling for the title and create-exam text */
+.home-desktop .title,
+.home-desktop .create-exam {
+  letter-spacing: 1.50px; /* Letter spacing */
+  line-height: 40px; /* Line height */
+  position: relative; /* Set the position to relative */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: fit-content; /* Fit the width to the content */
+  color: var(--black); /* Set the text color */
+  transition: color 0.2s ease; /* Smooth transition for text color */
+}
+
+/* Styling for images */
+.home-desktop .eyeglasses,
+.home-desktop .group {
+  height: 128px; /* Set the height */
+  position: relative; /* Set the position to relative */
+  width: 128px; /* Set the width */
+}
+
+/* Styling for the text group */
+.home-desktop .text-group {
+  align-items: flex-start; /* Align items to the start */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Column layout */
+  gap: 35px; /* Gap between items */
+  left: 42px; /* Position from the left */
+  min-height: 505px; /* Minimum height */
+  position: absolute; /* Set the position to absolute */
+  top: 55px; /* Position from the top */
+  width: 560px; /* Set the width */
+}
+
+/* Styling for individual steps */
+.home-desktop .step {
+  align-items: center; /* Center align items */
+  background-color: var(--burnt-orange); /* Set the background color */
+  border: 3px solid var(--black); /* Set the border */
+  border-radius: 30px; /* Set the border radius */
+  box-shadow: 0px 4px 4px #00000040; /* Add box shadow */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Column layout */
+  gap: 10px; /* Gap between items */
+  justify-content: center; /* Center items */
+  overflow: hidden; /* Hide overflow */
+  padding: 10px; /* Padding inside the frame */
+  position: relative; /* Set the position to relative */
+  width: 560px; /* Set the width */
+}
+
+/* Styling for subframes inside steps */
+.home-desktop .step-1-subframe {
+  align-items: center; /* Center align items */
+  background-color: var(--white); /* Set the background color */
+  border: 3px solid var(--black); /* Set the border */
+  border-radius: 30px; /* Set the border radius */
+  box-shadow: 0px 4px 4px #00000040; /* Add box shadow */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Column layout */
+  gap: 10px; /* Gap between items */
+  height: 80px; /* Set the height */
+  justify-content: center; /* Center items */
+  margin-left: -20px; /* Margin on the left */
+  margin-right: -20px; /* Margin on the right */
+  padding: 10px; /* Padding inside the frame */
+  position: relative; /* Set the position to relative */
+  width: 580px; /* Set the width */
+}
+
+/* Styling for text inside steps */
+.home-desktop .step-1 {
+  letter-spacing: 1.50px; /* Letter spacing */
+  line-height: 40px; /* Line height */
+  position: relative; /* Set the position to relative */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: fit-content; /* Fit the width to the content */
+}
+
+/* Styling for the step 2 frame */
+.home-desktop .step-2-frame {
+  align-items: center; /* Center align items */
+  background-color: #555f56; /* Set the background color */
+  border: 3px solid var(--black); /* Set the border */
+  border-radius: 30px; /* Set the border radius */
+  box-shadow: 0px 4px 4px #00000040; /* Add box shadow */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Column layout */
+  gap: 10px; /* Gap between items */
+  justify-content: center; /* Center items */
+  overflow: hidden; /* Hide overflow */
+  padding: 10px; /* Padding inside the frame */
+  position: relative; /* Set the position to relative */
+  width: 560px; /* Set the width */
+}
+
+/* Styling for the robot frame */
+.home-desktop .robot-frame {
+  align-items: center; /* Center align items */
+  display: inline-flex; /* Use inline flexbox for layout */
+  gap: 10px; /* Gap between items */
+  justify-content: center; /* Center items */
+  left: 820px; /* Position from the left */
+  position: absolute; /* Set the position to absolute */
+  top: 30px; /* Position from the top */
+}
+
+/* Styling for the black circle */
+.home-desktop .black-circle {
+  background-color: var(--black); /* Set the background color */
+  border-radius: 210px; /* Set the border radius */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Add box shadow */
+  height: 420px; /* Set the height */
+  position: relative; /* Set the position to relative */
+  width: 420px; /* Set the width */
+}
+
+/* Styling for the white circle */
+.home-desktop .white-circle {
+  background-color: var(--white); /* Set the background color */
+  border-radius: 195px; /* Set the border radius */
+  height: 390px; /* Set the height */
+  left: 15px; /* Position from the left */
+  position: absolute; /* Set the position to absolute */
+  top: 15px; /* Position from the top */
+  width: 390px; /* Set the width */
+}
+
+/* Styling for the green circle */
+.home-desktop .green-circle {
+  background-color: #555f56; /* Set the background color */
+  border-radius: 180px; /* Set the border radius */
+  height: 360px; /* Set the height */
+  left: 30px; /* Position from the left */
+  position: absolute; /* Set the position to absolute */
+  top: 30px; /* Position from the top */
+  width: 360px; /* Set the width */
+}
+
+/* Styling for the orange circle */
+.home-desktop .orange-circle {
+  background-color: var(--burnt-orange); /* Set the background color */
+  border-radius: 165px; /* Set the border radius */
+  height: 330px; /* Set the height */
+  left: 45px; /* Position from the left */
+  position: absolute; /* Set the position to absolute */
+  top: 45px; /* Position from the top */
+  width: 330px; /* Set the width */
+}
+
+/* Styling for the robot image */
+.home-desktop .robot-circle {
+  height: 300px; /* Set the height */
+  left: 60px; /* Position from the left */
+  object-fit: cover; /* Cover the object */
+  position: absolute; /* Set the position to absolute */
+  top: 60px; /* Position from the top */
+  width: 300px; /* Set the width */
+}
+
+/* Styling for links that act as buttons */
+.button-link {
+  text-decoration: none; /* Remove text decoration */
+  color: inherit; /* Inherit text color */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Column layout */
+  align-items: center; /* Center align items */
+  justify-content: center; /* Center items */
+  gap: 10px; /* Gap between items */
+  width: 100%; /* Set the width to 100% */
+  height: 100%; /* Set the height to 100% */
+}
+
+/* Hover effects for the evaluate frame */
+.evaluate-frame:hover {
+  background-color: #555f56; /* Change background color on hover */
+  border-color: #f98a49; /* Change border color on hover */
+}
+
+/* Hover effects for the title inside evaluate frame */
+.evaluate-frame:hover .title {
+  color: #ffffff; /* Change text color to white on hover */
+}
+
+/* Hover effects for the eyeglasses image */
+.evaluate-frame:hover .eyeglasses {
+  content: url('/static/images/eyeglasses-2.png'); /* Change image on hover */
+}
+
+/* Hover effects for the create frame */
+.create-frame:hover {
+  background-color: #555f56; /* Change background color on hover */
+  border-color: #f98a49; /* Change border color on hover */
+}
+
+/* Hover effects for the text inside create frame */
+.create-frame:hover .create-exam {
+  color: #ffffff; /* Change text color to white on hover */
+}
+
+/* Hover effects for the group image */
+.create-frame:hover .group {
+  content: url('/static/images/pencil-2.png'); /* Change image on hover */
+}

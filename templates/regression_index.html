@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta information about the document -->
+    <meta charset="utf-8" />
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=1280, maximum-scale=1.0" />
+
+    <!-- Shortcut icon for the website -->
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/robot-image@2x.png') }}" />
+    
+    <!-- Meta tags for Open Graph and Twitter cards -->
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+
+    <!-- Link to the CSS files -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='regression_style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleguide.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='globals.css') }}" />
+
+    <!-- Title of the webpage displayed on the browser tab -->
+    <title>Autograder | Regression</title>
+</head>
+
+<body style="margin: 0; background: #ffffff">
+    <!-- Hidden input to store the page name -->
+    <input type="hidden" id="anPageName" name="page" value="regression-desktop" />
+
+    <!-- Center the container horizontally -->
+    <div class="container-center-horizontal">
+        <div class="regression-desktop screen">
+
+            <!-- Frame for the regression table and related forms -->
+            <div class="regression-table-frame">
+                <div class="x-frame">
+                    <!-- Heading for the regression model training -->
+                    <h1 class="grade-the-following valign-text-middle arimo-bold-black-30px">
+                        Grade the following exercises to train the regression model:
+                    </h1>
+                </div>
+                <div class="x-frame">
+                    <div class="exam-data-table">
+                        <!-- Form for grading exercises -->
+                        <form id="grading-form" action="{{ url_for('create_regression_table') }}" method="POST">
+                            {{ grading_df_html_ready|safe }}
+                            <button type="submit" class="x-frame-1 x-frame-3 create-regression-model-button">
+                                Create Regression Model
+                            </button>
+                        </form>
+                        <!-- Form for adding another training exercise -->
+                        <form id="add-training-exercise-form" action="{{ url_for('add_training_exercise') }}" method="POST">
+                            <div class="x-frame-1 x-frame-3 add-another-training-exercise-container">
+                                <div class="add-another-training-exercise valign-text-middle arimo-bold-black-30px">
+                                    Add Another Training Exercise
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frame for displaying the regression plot -->
+            <div class="graph-frame" style="text-align: center;">
+                <img src="{{ url_for('plot_png') }}" alt="Regression Plot" style="width: 1240px; height: 620px;">
+            </div>
+
+            <!-- Frame for action buttons and instructions -->
+            <div class="button-frame">
+                <div class="information-frame">
+                    <p class="select-the-value-to valign-text-middle arimo-bold-black-30px">
+                        Select a value to which the points should be rounded. Optionally, you can have the grading explained by a large language model.
+                    </p>
+                </div>
+                <div class="button-container">
+                    <!-- Home button with hover effect -->
+                    <a href="{{ url_for('main_index') }}" class="x-frame-2 x-frame-3 button-hover home-button">
+                        <div class="text"><div class="place valign-text-middle arimo-bold-black-30px">Home</div></div>
+                        <img class="bx-home-alt" src="{{ url_for('static', filename='images/home-1.png') }}" alt="bx-home-alt" />
+                        <img class="bx-home-alt-hover" src="{{ url_for('static', filename='images/home-2.png') }}" alt="home-2" />
+                    </a>
+
+                    <!-- Forms for applying different grading schemes -->
+                    <form id="full-points-form" action="{{ url_for('apply_download_regression') }}" method="POST" class="grading-form" onsubmit="showLoading()">
+                        <input type="hidden" name="grading_method" value="Full Points">
+                        <input type="hidden" name="naming_scheme" value="full_points">
+                        <input type="hidden" name="llm_true" id="llm_true" value="false">
+                        <button type="submit" class="x-frame-2 x-frame-3 button-hover">
+                            <div class="text"><div class="full-points valign-text-middle arimo-bold-black-30px">Full Points</div></div>
+                        </button>
+                    </form>
+                    <form id="half-points-form" action="{{ url_for('apply_download_regression') }}" method="POST" class="grading-form" onsubmit="showLoading()">
+                        <input type="hidden" name="grading_method" value="Half Points">
+                        <input type="hidden" name="naming_scheme" value="half_points">
+                        <input type="hidden" name="llm_true" id="llm_true" value="false">
+                        <button type="submit" class="x-frame-2 x-frame-3 button-hover">
+                            <div class="text"><div class="frame-16"><div class="half-points valign-text-middle arimo-bold-black-30px">Half Points</div></div></div>
+                        </button>
+                    </form>
+                    <form id="quarter-points-form" action="{{ url_for('apply_download_regression') }}" method="POST" class="grading-form" onsubmit="showLoading()">
+                        <input type="hidden" name="grading_method" value="Quarter Points">
+                        <input type="hidden" name="naming_scheme" value="quarter_points">
+                        <input type="hidden" name="llm_true" id="llm_true" value="false">
+                        <button type="submit" class="x-frame-2 x-frame-3 button-hover">
+                            <div class="text"><div class="frame-16"><div class="quarter-points valign-text-middle arimo-bold-black-30px">Quarter<br />Points</div></div></div>
+                        </button>
+                    </form>
+
+                    <!-- Button for applying LLM (Large Language Model) -->
+                    <div class="x-frame-2 x-frame-3 llm-button" onclick="handleLLMClick(this)">
+                        <div class="text"><div class="llm valign-text-middle arimo-bold-black-30px">LLM</div></div>
+                        <img class="robot" src="{{ url_for('static', filename='images/robot-1.png') }}" alt="robot" />
+                        <img class="robot-hover" src="{{ url_for('static', filename='images/robot-2.png') }}" alt="robot-3" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading symbol (can be a spinner or any other symbol) -->
+    <div id="loading" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:1000;">
+        <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading..." />
+    </div>
+
+    <!-- JavaScript for handling interactions -->
+    <script>
+        let llmTrue = false;
+
+        // Show loading symbol
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        // Handle LLM button click
+        function handleLLMClick(element) {
+            llmTrue = !llmTrue;
+            element.classList.toggle('button-click');
+            document.querySelectorAll('form.grading-form').forEach(form => {
+                form.querySelector('#llm_true').value = llmTrue;
+            });
+        }
+
+        // Handle the "Add Another Training Exercise" button click
+        document.querySelector('.add-another-training-exercise-container').addEventListener('click', function() {
+            document.getElementById('add-training-exercise-form').submit();
+        });
+
+        // Ensure grading input values do not exceed the maximum allowed value
+        document.querySelectorAll('input[type="text"][name^="grading_"]').forEach(input => {
+            input.addEventListener('input', function() {
+                const max = parseFloat(this.getAttribute('max'));
+                if (parseFloat(this.value) > max) {
+                    this.value = max;
+                }
+            });
+        });
+
+        // Hide loading symbol when navigation to a new page is complete
+        window.addEventListener('pageshow', function() {
+            document.getElementById('loading').style.display = 'none';
+        });
+
+        // Attach event listeners to forms to hide loading symbol upon form submission completion
+        document.querySelectorAll('form.grading-form').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+                showLoading(); // Show loading symbol
+                const formData = new FormData(this);
+                fetch(this.action, {
+                    method: this.method,
+                    body: formData
+                })
+                .then(response => response.blob())
+                .then(blob => {
+                    // Create a URL for the Blob and trigger the download
+                    const url = window.URL.createObjectURL(new Blob([blob]));
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${formData.get('naming_scheme')}.xlsx`; // Set the file name for download
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove(); // Remove the anchor element after download
+                })
+                .finally(() => {
+                    // Hide loading symbol
+                    document.getElementById('loading').style.display = 'none';
+                })
+                .catch(error => {
+                    // Log any errors to the console
+                    console.error('There has been a problem with your fetch operation:', error);
+                    // Hide loading symbol in case of error
+                    document.getElementById('loading').style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

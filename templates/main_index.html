@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta information about the document -->
+    <meta charset="utf-8" />
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=1280, maximum-scale=1.0" />
+
+    <!-- Shortcut icon for the website -->
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/robot-image@2x.png') }}" />
+
+    <!-- Meta tags for Open Graph and Twitter cards -->
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+
+    <!-- Link to the CSS files -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main_style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleguide.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='globals.css') }}" />
+
+    <!-- Title of the webpage displayed on the browser tab -->
+    <title>Autograder | Home</title>
+</head>
+
+<body style="margin: 0; background: #ffffff">
+    <!-- Hidden input to store the page name -->
+    <input type="hidden" id="anPageName" name="page" value="home-desktop" />
+
+    <!-- Center the container horizontally -->
+    <div class="container-center-horizontal">
+        <!-- Main content of the home-desktop screen -->
+        <div class="home-desktop arimo-bold-black-30px screen">
+
+            <!-- Frame for the "Grade Exam" button -->
+            <div class="evaluate-frame">
+                <a href="{{ url_for('evaluate_exam_index') }}" class="button-link evaluate-button">
+                    <div class="title valign-text-middle">Grade Exam</div>
+                    <img class="eyeglasses" src="{{ url_for('static', filename='images/eyeglasses-1.png') }}" alt="eyeglasses" />
+                </a>
+            </div>
+
+            <!-- Frame for the "Create Exam" button -->
+            <div class="create-frame">
+                <a href="{{ url_for('create_exam_index') }}" class="button-link create-button">
+                    <div class="create-exam valign-text-middle">Create Exam</div>
+                    <img class="group" src="{{ url_for('static', filename='images/pencil-1.png') }}" alt="Group" />
+                </a>
+            </div>
+
+            <!-- Group of text steps -->
+            <div class="text-group">
+                <!-- Individual step frame -->
+                <div class="step">
+                    <div class="step-1-subframe"><p class="step-1 valign-text-middle">Step 1: Create an exam.</p></div>
+                </div>
+
+                <!-- Another step frame -->
+                <div class="step-2-frame">
+                    <div class="step-1-subframe"><p class="step-1 valign-text-middle">Step 2: Hand out your exam.</p></div>
+                </div>
+
+                <!-- Additional steps -->
+                <div class="step">
+                    <div class="step-1-subframe"><p class="step-1 valign-text-middle">Step 3: Upload all exams.</p></div>
+                </div>
+
+                <!-- Additional steps -->
+                <div class="step">
+                    <div class="step-1-subframe"><p class="step-1 valign-text-middle">Step 4: Choose a grading scheme.</p></div>
+                </div>
+            </div>
+            
+            <!-- Frame for the robot image -->
+            <div class="robot-frame">
+                <div class="black-circle"></div>
+                <div class="white-circle"></div>
+                <div class="green-circle"></div>
+                <div class="orange-circle"></div>
+                <img class="robot-circle" src="{{ url_for('static', filename='images/robot-image@2x.png') }}" alt="Robot Circle" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

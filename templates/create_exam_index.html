@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta information about the document -->
+    <meta charset="utf-8" />
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=1280, maximum-scale=1.0" />
+
+    <!-- Shortcut icon for the website -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/robot-image@2x.png') }}"
+    />
+
+    <!-- Meta tags for Open Graph and Twitter cards -->
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+
+    <!-- Link to the CSS files -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='create_exam_style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styleguide.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='globals.css') }}"
+    />
+
+    <!-- Title of the webpage displayed on the browser tab -->
+    <title>Autograder | Create Exam</title>
+  </head>
+
+  <body style="margin: 0; background: #ffffff">
+    <!-- Hidden input to store the page name -->
+    <input
+      type="hidden"
+      id="anPageName"
+      name="page"
+      value="create-exam-desktop"
+    />
+
+    <!-- Center the container horizontally -->
+    <div class="container-center-horizontal">
+      <!-- Main content of the create-exam-desktop screen -->
+      <div class="create-exam-desktop screen">
+        <!-- Frame for question input -->
+        <div class="question-frame">
+          <!-- Form for adding questions -->
+          <form
+            id="question_form"
+            action="{{ url_for('create_exam_index') }}"
+            method="post"
+          >
+            <div class="x-frame">
+              <!-- Section for question input -->
+              <div class="frame-input frame">
+                <h1 class="title valign-text-middle arimo-bold-black-30px">
+                  Question:
+                </h1>
+              </div>
+              <div class="frame-text frame">
+                <input
+                  type="text"
+                  class="enter valign-text-middle arimo-bold-star-dust-30px"
+                  name="question"
+                  placeholder="Enter Question"
+                  required
+                />
+              </div>
+            </div>
+            <div class="x-frame">
+              <!-- Section for answer input -->
+              <div class="frame-input frame">
+                <div class="answer valign-text-middle arimo-bold-black-30px">
+                  Answer:
+                </div>
+              </div>
+              <div class="frame-text frame">
+                <input
+                  type="text"
+                  class="enter valign-text-middle arimo-bold-star-dust-30px"
+                  name="answer"
+                  placeholder="Enter Answer"
+                  required
+                />
+              </div>
+            </div>
+            <div class="x-frame">
+              <!-- Section for Alternative Solution input -->
+              <div class="frame-input frame">
+                <div
+                  class="alternative-answer valign-text-middle arimo-bold-black-30px"
+                >
+                  Alternative Solution:
+                </div>
+              </div>
+              <div class="frame-text frame">
+                <input
+                  type="text"
+                  class="optional valign-text-middle arimo-bold-star-dust-30px"
+                  name="alternative_answer"
+                  placeholder="Optional"
+                />
+              </div>
+            </div>
+            <div class="points-frame">
+              <!-- Section for points input -->
+              <div class="frame-input frame">
+                <div class="points valign-text-middle arimo-bold-black-30px">
+                  Points:
+                </div>
+              </div>
+              <div class="frame-number">
+                <input
+                  type="number"
+                  class="enter valign-text-middle arimo-bold-star-dust-30px"
+                  name="points"
+                  placeholder="Enter Points"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Button to submit the question form -->
+            <button type="submit" class="add-question-button">
+              <div
+                class="add-question valign-text-middle arimo-bold-black-30px"
+              >
+                Add Question
+              </div>
+            </button>
+          </form>
+        </div>
+
+        <!-- Frame for the "Create Exam" button -->
+        <div class="button-frame">
+          <!-- Form for creating the exam file -->
+          <form
+            action="{{ url_for('download_exam') }}"
+            method="post"
+            class="create-frame"
+          >
+            <div class="frame-filename frame">
+              <input
+                type="text"
+                class="enter-title-once valign-text-middle arimo-bold-star-dust-30px"
+                name="filename"
+                placeholder="Enter Title once"
+                required
+              />
+            </div>
+
+            <!-- Button to create the exam -->
+            <button type="submit" class="create-exam-button">
+              <div class="create-exam valign-text-middle arimo-bold-black-30px">
+                Create Exam
+              </div>
+            </button>
+          </form>
+
+          <!-- Link to Home Page -->
+          <a href="{{ url_for('main_index') }}" class="home-button">
+            <img
+              class="bx-home-alt"
+              src="{{ url_for('static', filename='images/home-1.png') }}"
+              alt="bx-home-alt"
+              class="home-icon"
+            />
+            <img
+              class="home-2"
+              src="{{ url_for('static', filename='images/home-2.png') }}"
+              alt="home-2"
+              class="home-icon"
+            />
+            <div class="place valign-text-middle arimo-bold-black-30px">
+              Home
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container for Displaying Current Exam Data -->
+    <div class="data_container">
+      <h2 class="arimo-bold-black-30px">Current Exam Data</h2>
+
+      <!-- Display the DataFrame as an HTML Table -->
+      <div class="exam-data-table">{{ exam_data_html|safe }}</div>
+    </div>
+  </body>
+</html>

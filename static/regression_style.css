@@ -1,0 +1,481 @@
+/* screen - regression-desktop */
+
+/* Main container styling */
+.regression-desktop {
+  align-items: center; /* Center child items vertically */
+  background-color: var(--white); /* Set background color to white */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange child items in a column */
+  height: 832px; /* Set fixed height */
+  padding: 0 15px; /* Add horizontal padding */
+  width: 1280px; /* Set fixed width */
+}
+
+/* Styling for the regression table frame */
+.regression-desktop .regression-table-frame {
+  align-items: center; /* Center child items vertically */
+  align-self: center; /* Center self horizontally */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange child items in a column */
+  gap: 20px; /* Add gap between child items */
+  justify-content: center; /* Center child items horizontally */
+  position: relative; /* Relative positioning */
+  width: 1230px; /* Set fixed width */
+  max-width: 100%; /* Ensure width does not exceed 100% */
+}
+
+/* Styling for the frame container */
+.regression-desktop .x-frame {
+  align-items: center; /* Center child items vertically */
+  align-self: stretch; /* Stretch to fill container */
+  background-color: var(--white); /* Set background color to white */
+  border-radius: 30px; /* Add rounded corners */
+  display: flex; /* Use flexbox layout */
+  flex: 0 0 auto; /* Do not grow or shrink */
+  gap: 10px; /* Add gap between child items */
+  padding: 10px; /* Add padding */
+  position: relative; /* Relative positioning */
+  width: 100%; /* Full width */
+  max-width: 1230px; /* Ensure width does not exceed 1230px */
+}
+
+/* Styling for the grading section title */
+.regression-desktop .grade-the-following {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  margin-top: -3px; /* Adjust top margin */
+  position: relative; /* Relative positioning */
+  width: 100%; /* Full width */
+}
+
+/* Styling for the grading table section */
+.regression-desktop .display-the-grading-table-here {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  margin-top: -3px; /* Adjust top margin */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center align text */
+  width: 100%; /* Full width */
+}
+
+/* Styling for the additional training exercise frame */
+.regression-desktop .x-frame-1 {
+  border-radius: 10px; /* Add rounded corners */
+  flex: 0 0 auto; /* Do not grow or shrink */
+  gap: 10px; /* Add gap between child items */
+  padding: 10px; /* Add padding */
+  width: 100%; /* Full width */
+  cursor: pointer; /* Pointer cursor for hover effect */
+  max-width: 1230px; /* Ensure width does not exceed 1230px */
+}
+
+/* Styling for the add another training exercise button */
+.regression-desktop .add-another-training-exercise-container {
+  width: 100%; /* Full width */
+  max-width: 1230px; /* Ensure width does not exceed 1230px */
+  background-color: var(--burnt-orange); /* Set background color */
+  border: 3px solid var(--black); /* Add black border */
+  box-shadow: 0px 4px 4px #00000040; /* Add shadow */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center align child items */
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 30px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+  padding: 10px; /* Add padding */
+  border-radius: 10px; /* Add rounded corners */
+  margin-top: 10px; /* Add margin from the table */
+  cursor: pointer; /* Pointer cursor for hover effect */
+}
+
+/* Styling for the add another training exercise text */
+.regression-desktop .add-another-training-exercise {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  margin-top: -3px; /* Adjust top margin */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: fit-content; /* Fit width to content */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 30px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Styling for the create regression model button */
+.regression-desktop .create-regression-model-button {
+  border-radius: 10px; /* Add rounded corners */
+  flex: 0 0 auto; /* Do not grow or shrink */
+  gap: 10px; /* Add gap between child items */
+  padding: 10px; /* Add padding */
+  margin-top: 10px; /* Add margin from the table */
+  width: 100%; /* Full width */
+  cursor: pointer; /* Pointer cursor for hover effect */
+  max-width: 1230px; /* Ensure width does not exceed 1230px */
+  background-color: var(--burnt-orange); /* Set background color */
+  border: 3px solid var(--black); /* Add black border */
+  box-shadow: 0px 4px 4px #00000040; /* Add shadow */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center align child items */
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 30px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Hover effects for buttons */
+.regression-desktop .create-regression-model-button:hover,
+.regression-desktop .add-another-training-exercise-container:hover,
+.regression-desktop .x-frame-1:hover,
+.regression-desktop .x-frame-1:hover .add-another-training-exercise {
+  background-color: #555F56; /* Change background color on hover */
+  color: #FFFFFF; /* Change text color to white on hover */
+  border-color: #F98A49; /* Change border color on hover */
+}
+
+/* Styling for the graph frame */
+.regression-desktop .graph-frame {
+  align-items: center; /* Center align child items */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center align child items */
+  padding: 10px; /* Add padding */
+  position: relative; /* Relative positioning */
+  background-color: var(--white); /* Set background color to white */
+  border: 3px solid var(--black); /* Add black border */
+  box-shadow: 0px 4px 4px #00000040; /* Add shadow */
+  border-radius: 30px; /* Add rounded corners */
+}
+
+/* Styling for the graph section */
+.regression-desktop .display-the-graph-here-table-here {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  margin-top: -1px; /* Adjust top margin */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: fit-content; /* Fit width to content */
+}
+
+/* Styling for the button frame */
+.regression-desktop .button-frame {
+  align-items: center; /* Center align child items */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange child items in a column */
+  justify-content: center; /* Center align child items */
+  margin-top: 20px; /* Add top margin */
+  position: relative; /* Relative positioning */
+  width: 100%; /* Full width */
+}
+
+/* Styling for the information frame */
+.regression-desktop .information-frame {
+  align-items: center; /* Center align child items */
+  display: flex; /* Use flexbox layout */
+  gap: 10px; /* Add gap between child items */
+  padding: 10px; /* Add padding */
+  position: relative; /* Relative positioning */
+  width: 100%; /* Full width */
+  text-align: center; /* Center align text */
+}
+
+/* Styling for the select value section */
+.regression-desktop .select-the-value-to {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  margin-top: -1px; /* Adjust top margin */
+  position: relative; /* Relative positioning */
+  width: 100%; /* Full width */
+}
+
+/* Styling for the button container */
+.regression-desktop .button-container {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  justify-content: space-between; /* Adjust spacing between buttons */
+  width: 1240px; /* Set container width */
+  max-width: 100%; /* Ensure width does not exceed 100% */
+}
+
+/* Styling for the secondary frame container */
+.regression-desktop .x-frame-2 {
+  border-radius: 30px; /* Add rounded corners */
+  flex-direction: column; /* Arrange child items in a column */
+  height: 200px; /* Set fixed height */
+  overflow: hidden; /* Hide overflow */
+  padding: 30px 0; /* Add vertical padding */
+  width: 200px; /* Set fixed width */
+  flex: 0 0 200px; /* Maintain 200px width */
+}
+
+/* Styling for text elements */
+.regression-desktop .text {
+  align-items: center; /* Center align child items */
+  display: flex; /* Use flexbox layout */
+  flex: 0 0 auto; /* Do not grow or shrink */
+  gap: 10px; /* Add gap between child items */
+  justify-content: center; /* Center align child items */
+  margin-left: -10px; /* Add left margin */
+  margin-right: -10px; /* Add right margin */
+  padding: 10px; /* Add padding */
+  position: relative; /* Relative positioning */
+  width: 220px; /* Set fixed width */
+}
+
+/* Styling for the place text */
+.regression-desktop .place {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  margin-top: -1px; /* Adjust top margin */
+  position: relative; /* Relative positioning */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: fit-content; /* Fit width to content */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 30px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Styling for home icon */
+.regression-desktop .bx-home-alt {
+  height: 80px; /* Set fixed height */
+  position: relative; /* Relative positioning */
+  width: 80px; /* Set fixed width */
+}
+
+/* Styling for hover state of home icon */
+.regression-desktop .bx-home-alt-hover {
+  display: none; /* Hide by default */
+  width: 80px; /* Set fixed width */
+  height: 80px; /* Set fixed height */
+}
+
+/* Styling for hover state of robot icon */
+.regression-desktop .robot-hover {
+  display: none; /* Hide by default */
+  width: 80px; /* Set fixed width */
+  height: 80px; /* Set fixed height */
+}
+
+/* Styling for vector icon */
+.regression-desktop .vector {
+  height: 67px; /* Set fixed height */
+  left: 10px; /* Position from the left */
+  position: absolute; /* Absolute positioning */
+  top: 7px; /* Position from the top */
+  width: 60px; /* Set fixed width */
+}
+
+/* Styling for full points text */
+.regression-desktop .full-points {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  margin-top: -1px; /* Adjust top margin */
+  position: relative; /* Relative positioning */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: fit-content; /* Fit width to content */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 30px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Styling for the frame 16 container */
+.regression-desktop .frame-16 {
+  align-items: center; /* Center align child items */
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow child items to wrap */
+  gap: 10px; /* Add gap between child items */
+  height: 107px; /* Set fixed height */
+  justify-content: center; /* Center align child items */
+  margin-left: -2px; /* Add left margin */
+  margin-right: -2px; /* Add right margin */
+  position: relative; /* Relative positioning */
+  width: 204px; /* Set fixed width */
+}
+
+/* Styling for half points text */
+.regression-desktop .half-points {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center align text */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: fit-content; /* Fit width to content */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 30px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Styling for quarter points text */
+.regression-desktop .quarter-points {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center align text */
+  width: fit-content; /* Fit width to content */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 30px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Styling for LLM text */
+.regression-desktop .llm {
+  letter-spacing: 1.50px; /* Add letter spacing */
+  line-height: 40px; /* Set line height */
+  margin-top: -1px; /* Adjust top margin */
+  position: relative; /* Relative positioning */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: fit-content; /* Fit width to content */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 30px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Styling for robot icon */
+.regression-desktop .robot {
+  height: 80px; /* Set fixed height */
+  position: relative; /* Relative positioning */
+  width: 80px; /* Set fixed width */
+}
+
+/* Styling for another frame container */
+.regression-desktop .x-frame-3 {
+  align-items: center; /* Center align child items */
+  background-color: var(--burnt-orange); /* Set background color */
+  border: 3px solid; /* Add border */
+  border-color: var(--black); /* Set border color */
+  box-shadow: 0px 4px 4px #00000040; /* Add shadow */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center align child items */
+  position: relative; /* Relative positioning */
+  width: 100%; /* Full width */
+  max-width: 1230px; /* Ensure width does not exceed 1230px */
+}
+
+/* Hover effect for buttons */
+.button-hover {
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.button-hover:hover {
+  background-color: #555F56; /* Change background color on hover */
+  color: #FFFFFF; /* Change text color to white on hover */
+  border-color: #F98A49; /* Change border color on hover */
+}
+
+/* Hover effect for text elements */
+.button-hover:hover .text,
+.button-hover:hover .place,
+.button-hover:hover .full-points,
+.button-hover:hover .half-points,
+.button-hover:hover .quarter-points,
+.button-hover:hover .llm {
+  color: #FFFFFF; /* Change text color to white on hover */
+}
+
+/* Hide default icons on hover */
+.button-hover:hover .bx-home-alt,
+.button-hover:hover .robot {
+  display: none; /* Hide icons on hover */
+}
+
+/* Show hover icons */
+.button-hover:hover .bx-home-alt-hover,
+.button-hover:hover .robot-hover {
+  display: block; /* Show hover icons */
+}
+
+/* Click effect for buttons */
+.button-click {
+  background-color: #555F56 !important; /* Change background color on click */
+  color: #FFFFFF !important; /* Change text color to white on click */
+  border-color: #F98A49 !important; /* Change border color on click */
+}
+
+.button-click .text,
+.button-click .place,
+.button-click .full-points,
+.button-click .half-points,
+.button-click .quarter-points,
+.button-click .llm {
+  color: #FFFFFF !important; /* Change text color to white on click */
+}
+
+.button-click .bx-home-alt,
+.button-click .robot {
+  display: none !important; /* Hide icons on click */
+}
+
+.button-click .bx-home-alt-hover,
+.button-click .robot-hover {
+  display: block !important; /* Show hover icons on click */
+}
+
+/* Styling for the data container */
+.data_container {
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  flex-direction: column; /* Arrange items in a column */
+  margin-top: 20px; /* Add top margin */
+  padding: 20px; /* Add padding */
+  background-color: #ffffff; /* Set background color to white */
+  width: 1230px; /* Set container width */
+  max-width: 100%; /* Ensure width does not exceed 100% */
+}
+
+/* Styling for the exam data table container */
+.exam-data-table {
+  width: 100%; /* Full width */
+  overflow-x: auto; /* Horizontal scroll if needed */
+}
+
+/* Styling for the exam data table */
+.exam-data-table table {
+  margin: 0 auto; /* Center align table */
+  border-collapse: collapse; /* Collapse table borders */
+  width: 100%; /* Full width */
+}
+
+/* Styling for table headers and cells */
+.exam-data-table th, .exam-data-table td {
+  border: 1px solid #000; /* Add border */
+  padding: 8px; /* Add padding */
+  text-align: left; /* Left align text */
+  color: #000; /* Set text color */
+  font-family: 'Arimo', sans-serif; /* Apply font family */
+  font-size: 14px; /* Set font size */
+  font-weight: bold; /* Set font weight */
+}
+
+/* Styling for table headers */
+.exam-data-table th {
+  background-color: #f2f2f2; /* Set background color */
+}
+
+/* Ensure the table is always at the bottom */
+body {
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange items in a column */
+  min-height: 100vh; /* Minimum viewport height */
+}
+
+/* Centering container horizontally */
+.container-center-horizontal {
+  flex: 1; /* Take remaining horizontal space */
+}
+
+/* Add hover effect for buttons and text */
+.x-frame-1:hover,
+.x-frame-1:hover .add-another-training-exercise,
+.create-regression-model-button:hover,
+.add-another-training-exercise-container:hover {
+  background-color: #555F56; /* Change background color on hover */
+  color: #FFFFFF; /* Change text color to white on hover */
+  border-color: #F98A49; /* Change border color on hover */
+}

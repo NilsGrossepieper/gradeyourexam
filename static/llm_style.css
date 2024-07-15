@@ -1,0 +1,299 @@
+/* Styles for the main desktop container */
+.llm-desktop {
+  align-items: center; /* Center children along the cross axis */
+  background-color: var(--white); /* Set background color */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange children in a column */
+  gap: 130px; /* Space between children */
+  height: 832px; /* Fixed height */
+  padding: 30px 0; /* Vertical padding */
+  width: 1280px; /* Fixed width */
+}
+
+/* Styles for the frame container within the desktop */
+.llm-desktop .frame-container {
+  gap: 140px; /* Space between children */
+  height: 420px; /* Fixed height */
+  margin-left: 40px; /* Left margin */
+  min-width: 1160px; /* Minimum width */
+}
+
+/* Styles for the instruction frame */
+.llm-desktop .instruction-frame {
+  align-items: center; /* Center children along the cross axis */
+  background-color: var(--burnt-orange); /* Set background color */
+  border: 3px solid; /* Border width */
+  border-color: var(--black); /* Border color */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0px 4px 4px #00000040; /* Box shadow */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange children in a column */
+  gap: 10px; /* Space between children */
+  height: 120px; /* Fixed height */
+  justify-content: center; /* Center children along the main axis */
+  padding: 10px 0; /* Vertical padding */
+  position: relative; /* Relative positioning */
+  width: 600px; /* Fixed width */
+}
+
+/* Styles for the text frame */
+.llm-desktop .text-frame {
+  align-items: center; /* Center children along the cross axis */
+  background-color: var(--white); /* Set background color */
+  border: 3px solid; /* Border width */
+  border-color: var(--black); /* Border color */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0px 4px 4px #00000040; /* Box shadow */
+  display: inline-flex; /* Use inline flexbox layout */
+  flex: 0 0 auto; /* Flex properties */
+  gap: 10px; /* Space between children */
+  justify-content: center; /* Center children along the main axis */
+  padding: 10px; /* Padding */
+  position: relative; /* Relative positioning */
+}
+
+/* Styles for the last step selection text */
+.llm-desktop .last-step-select-th {
+  letter-spacing: 1.50px; /* Space between letters */
+  line-height: 40px; /* Line height */
+  margin-top: -3px; /* Top margin */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center text */
+  width: 580px; /* Fixed width */
+}
+
+/* Styles for the robot frame */
+.llm-desktop .robot-frame {
+  align-items: center; /* Center children along the cross axis */
+  display: inline-flex; /* Use inline flexbox layout */
+  gap: 10px; /* Space between children */
+  justify-content: center; /* Center children along the main axis */
+  position: relative; /* Relative positioning */
+}
+
+/* Styles for the black circle */
+.llm-desktop .black-circle {
+  background-color: var(--black); /* Set background color */
+  border-radius: 210px; /* Rounded corners */
+  box-shadow: 0px 4px 4px #00000040; /* Box shadow */
+  height: 420px; /* Fixed height */
+  position: relative; /* Relative positioning */
+  width: 420px; /* Fixed width */
+}
+
+/* Styles for the white circle */
+.llm-desktop .white-circle {
+  background-color: var(--white); /* Set background color */
+  border-radius: 195px; /* Rounded corners */
+  height: 390px; /* Fixed height */
+  left: 15px; /* Left position */
+  position: absolute; /* Absolute positioning */
+  top: 15px; /* Top position */
+  width: 390px; /* Fixed width */
+}
+
+/* Styles for the green circle */
+.llm-desktop .green-circle {
+  background-color: #555f56; /* Set background color */
+  border-radius: 180px; /* Rounded corners */
+  height: 360px; /* Fixed height */
+  left: 30px; /* Left position */
+  position: absolute; /* Absolute positioning */
+  top: 30px; /* Top position */
+  width: 360px; /* Fixed width */
+}
+
+/* Styles for the orange circle */
+.llm-desktop .orange-circle {
+  background-color: var(--burnt-orange); /* Set background color */
+  border-radius: 165px; /* Rounded corners */
+  height: 330px; /* Fixed height */
+  left: 45px; /* Left position */
+  position: absolute; /* Absolute positioning */
+  top: 45px; /* Top position */
+  width: 330px; /* Fixed width */
+}
+
+/* Styles for the robot circle */
+.llm-desktop .robot-circle {
+  height: 300px; /* Fixed height */
+  left: 60px; /* Left position */
+  object-fit: cover; /* Object fit */
+  position: absolute; /* Absolute positioning */
+  top: 60px; /* Top position */
+  width: 300px; /* Fixed width */
+}
+
+/* Styles for the button frame */
+.llm-desktop .button-frame {
+  align-items: center; /* Center children along the cross axis */
+  display: inline-flex; /* Use inline flexbox layout */
+  gap: 100px; /* Space between children */
+  justify-content: center; /* Center children along the main axis */
+  margin-right: 20px; /* Right margin */
+  position: relative; /* Relative positioning */
+}
+
+/* Styles for individual button frame items */
+.llm-desktop .button-frame-item {
+  align-items: center; /* Center children along the cross axis */
+  background-color: var(--burnt-orange); /* Set background color */
+  border: 3px solid; /* Border width */
+  border-color: var(--black); /* Border color */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0px 4px 4px #00000040; /* Box shadow */
+  display: inline-flex; /* Use inline flexbox layout */
+  flex: 0 0 auto; /* Flex properties */
+  flex-direction: column; /* Arrange children in a column */
+  height: 220px; /* Fixed height */
+  justify-content: center; /* Center children along the main axis */
+  overflow: hidden; /* Hide overflow */
+  padding: 30px 0; /* Vertical padding */
+  position: relative; /* Relative positioning */
+  text-decoration: none; /* Remove text decoration */
+  color: black; /* Text color */
+  cursor: pointer; /* Pointer cursor */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Styles for images inside button frame items */
+.llm-desktop .button-frame-item img {
+  width: 60px; /* Fixed width */
+  height: 60px; /* Fixed height */
+}
+
+/* Styles for hover elements inside button frame items */
+.llm-desktop .button-frame-item .bx-home-alt-hover,
+.llm-desktop .button-frame-item .robot-hover,
+.llm-desktop .button-frame-item .graph-up-hover {
+  display: none; /* Hide by default */
+}
+
+/* Hide default icons on hover */
+.llm-desktop .home-button:hover .bx-home-alt,
+.llm-desktop .llm-button:hover .robot,
+.llm-desktop .supervised-learning-button:hover .graph-up {
+  display: none; /* Hide default icons */
+}
+
+/* Show hover icons on hover */
+.llm-desktop .home-button:hover .bx-home-alt-hover {
+  display: block; /* Show hover icon */
+}
+
+.llm-desktop .llm-button:hover .robot-hover,
+.llm-desktop .supervised-learning-button:hover .graph-up-hover {
+  display: block; /* Show hover icons */
+}
+
+/* Styles for button frame items on hover */
+.llm-desktop .button-frame-item:hover {
+  background-color: #555F56; /* Change background color on hover */
+  border-color: #F98A49; /* Change border color on hover */
+}
+
+/* Styles for text inside button frame items on hover */
+.llm-desktop .button-frame-item:hover .place,
+.llm-desktop .button-frame-item:hover .full-points,
+.llm-desktop .button-frame-item:hover .half-points,
+.llm-desktop .button-frame-item:hover .quarter-points {
+  color: #FFFFFF; /* Change text color on hover */
+}
+
+/* Styles for text elements */
+.llm-desktop .text {
+  align-items: center; /* Center children along the cross axis */
+  display: flex; /* Use flexbox layout */
+  flex: 0 0 auto; /* Flex properties */
+  gap: 10px; /* Space between children */
+  justify-content: center; /* Center children along the main axis */
+  padding: 10px; /* Padding */
+  position: relative; /* Relative positioning */
+  width: 220px; /* Fixed width */
+  color: black; /* Text color */
+}
+
+/* Styles for the place text */
+.llm-desktop .place {
+  letter-spacing: 1.50px; /* Space between letters */
+  line-height: 40px; /* Line height */
+  margin-top: -1px; /* Top margin */
+  position: relative; /* Relative positioning */
+  white-space: nowrap; /* No text wrapping */
+  width: fit-content; /* Fit content width */
+  color: black; /* Text color */
+  text-align: center; /* Center text */
+}
+
+/* Styles for the home icon */
+.llm-desktop .bx-home-alt {
+  height: 60px; /* Fixed height */
+  position: relative; /* Relative positioning */
+  width: 60px; /* Fixed width */
+}
+
+/* Styles for the home icon on hover */
+.llm-desktop .bx-home-alt-hover {
+  display: none; /* Hide by default */
+  width: 60px; /* Default width */
+  height: 60px; /* Default height */
+}
+
+/* Styles for the vector element */
+.llm-desktop .vector {
+  height: 67px; /* Fixed height */
+  left: 10px; /* Left position */
+  position: absolute; /* Absolute positioning */
+  top: 7px; /* Top position */
+  width: 60px; /* Fixed width */
+}
+
+/* Styles for the full points text */
+.llm-desktop .full-points {
+  letter-spacing: 1.50px; /* Space between letters */
+  line-height: 40px; /* Line height */
+  margin-top: -1px; /* Top margin */
+  position: relative; /* Relative positioning */
+  white-space: nowrap; /* No text wrapping */
+  width: fit-content; /* Fit content width */
+  color: #000000; /* Text color */
+}
+
+/* Styles for the frame 16 element */
+.llm-desktop .frame-16 {
+  flex-wrap: wrap; /* Wrap children */
+  gap: 10px; /* Space between children */
+  height: 107px; /* Fixed height */
+  justify-content: center; /* Center children along the main axis */
+  margin-left: -2px; /* Left margin */
+  margin-right: -2px; /* Right margin */
+  position: relative; /* Relative positioning */
+  width: 204px; /* Fixed width */
+}
+
+/* Styles for the half points text */
+.llm-desktop .half-points {
+  letter-spacing: 1.50px; /* Space between letters */
+  line-height: 40px; /* Line height */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center text */
+  white-space: nowrap; /* No text wrapping */
+  width: fit-content; /* Fit content width */
+  color: #000000; /* Text color */
+}
+
+/* Styles for the quarter points text */
+.llm-desktop .quarter-points {
+  letter-spacing: 1.50px; /* Space between letters */
+  line-height: 40px; /* Line height */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center text */
+  width: fit-content; /* Fit content width */
+  color: #000000; /* Text color */
+}
+
+/* Styles for the frame element */
+.llm-desktop .frame {
+  align-items: center; /* Center children along the cross axis */
+  display: flex; /* Use flexbox layout */
+}

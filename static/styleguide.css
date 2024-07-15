@@ -1,0 +1,31 @@
+:root {
+  /* Define color variables */
+  --black: #000000;
+  --burnt-orange: #f98a49;
+  --star-dust: #9b9999;
+  --white: #ffffff;
+
+  /* Define font size variable */
+  --font-size-m: 30px;
+
+  /* Define font family variable */
+  --font-family-arimo: "Arimo", Helvetica, sans-serif;
+}
+
+/* Class for bold black text with Arimo font */
+.arimo-bold-black-30px {
+  color: var(--black); /* Set text color to black */
+  font-family: var(--font-family-arimo); /* Set font family to Arimo */
+  font-size: var(--font-size-m); /* Set font size */
+  font-style: normal; /* Normal font style */
+  font-weight: 700; /* Bold font weight */
+}
+
+/* Class for bold star dust colored text with Arimo font */
+.arimo-bold-star-dust-30px {
+  color: var(--star-dust); /* Set text color to star dust */
+  font-family: var(--font-family-arimo); /* Set font family to Arimo */
+  font-size: var(--font-size-m); /* Set font size */
+  font-style: normal; /* Normal font style */
+  font-weight: 700; /* Bold font weight */
+}

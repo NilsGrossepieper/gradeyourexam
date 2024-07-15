@@ -1,0 +1,38 @@
+/* Importing external CSS resources */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Arimo:700");
+/* The following line is used to measure usage of this code. You can remove it if you want. */
+@import url("https://px.animaapp.com/6671cf36f9e01af754472eb1.6671cf37f9e01af754472eb4.9YCpkTu.hcp.png");
+
+/* Styling for anchor tags within elements with the class 'screen' */
+.screen a {
+  display: contents; /* Ensure the link does not disrupt the layout */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Centering container horizontally */
+.container-center-horizontal {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Arrange children in a row */
+  justify-content: center; /* Center children horizontally */
+  pointer-events: none; /* Disable pointer events */
+  width: 100%; /* Set the width to 100% */
+}
+
+/* Child elements of the horizontally centered container */
+.container-center-horizontal > * {
+  flex-shrink: 0; /* Prevent shrinking */
+  pointer-events: auto; /* Enable pointer events */
+}
+
+/* Vertically align text in the middle */
+.valign-text-middle {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: center; /* Center children vertically */
+}
+
+/* Apply box-sizing to all elements */
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}

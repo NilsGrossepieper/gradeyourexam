@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags for character set and viewport configuration -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280, maximum-scale=1.0" />
+
+    <!-- Favicon link -->
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/robot-image@2x.png') }}" />
+
+    <!-- Open Graph and Twitter Card meta tags -->
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+
+    <!-- Link to external CSS stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='llm_style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleguide.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='globals.css') }}" />
+
+    <!-- Page title -->
+    <title>Autograder | LLM</title>
+</head>
+
+<body style="margin: 0; background: #ffffff">
+    <!-- Hidden input to store the page name -->
+    <input type="hidden" id="anPageName" name="page" value="llm-desktop" />
+
+    <!-- Centered container -->
+    <div class="container-center-horizontal">
+        <!-- Main desktop screen container -->
+        <div class="llm-desktop screen">
+            <!-- Frame container for instructions and robot image -->
+            <div class="frame-container frame">
+                <!-- Instruction frame -->
+                <div class="instruction-frame">
+                    <div class="text-frame">
+                        <h1 class="last-step-select-th valign-text-middle arimo-bold-black-30px">
+                            Last step: Select a value to which the points should be rounded.
+                        </h1>
+                    </div>
+                </div>
+                <!-- Robot frame with nested circles -->
+                <div class="robot-frame">
+                    <div class="black-circle"></div>
+                    <div class="white-circle"></div>
+                    <div class="green-circle"></div>
+                    <div class="orange-circle"></div>
+                    <!-- Robot image -->
+                    <img class="robot-circle" src="{{ url_for('static', filename='images/robot-image@2x.png') }}" alt="Robot Circle" />
+                </div>
+            </div>
+            <!-- Button frame container -->
+            <div class="button-frame">
+                <!-- Home button with hover effect -->
+                <a href="{{ url_for('main_index') }}" class="button-frame-item home-button">
+                    <div class="text">
+                        <div class="place valign-text-middle arimo-bold-black-30px">Home</div>
+                    </div>
+                    <img class="bx-home-alt" src="{{ url_for('static', filename='images/home-1.png') }}" alt="bx-home-alt" />
+                    <img class="bx-home-alt-hover" src="{{ url_for('static', filename='images/home-2.png') }}" alt="home-2" />
+                </a>
+                <!-- Full Points button -->
+                <div class="button-frame-item" onclick="applyLLM('full_points')">
+                    <div class="text">
+                        <div class="full-points valign-text-middle arimo-bold-black-30px">Full Points</div>
+                    </div>
+                </div>
+                <!-- Half Points button -->
+                <div class="button-frame-item" onclick="applyLLM('half_points')">
+                    <div class="text">
+                        <div class="frame-16 frame">
+                            <div class="half-points valign-text-middle arimo-bold-black-30px">Half Points</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quarter Points button -->
+                <div class="button-frame-item" onclick="applyLLM('quarter_points')">
+                    <div class="text">
+                        <div class="frame-16 frame">
+                            <div class="quarter-points valign-text-middle arimo-bold-black-30px">Quarter<br />Points</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading symbol (can be a spinner or any other symbol) -->
+    <div id="loading" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:1000;">
+        <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading..." />
+    </div>
+
+    <!-- JavaScript function to handle button clicks and download files -->
+    <script>
+        // Function to handle the application of LLM with different naming schemes
+        function applyLLM(namingScheme) {
+            // Show loading symbol
+            document.getElementById('loading').style.display = 'block';
+
+            // Sending POST request to apply LLM
+            fetch('/apply_llm', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ naming_scheme: namingScheme })
+            })
+            .then(response => {
+                // Check if the response is OK
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.blob(); // Convert response to Blob
+            })
+            .then(blob => {
+                // Create a URL for the Blob and trigger the download
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `llm_${namingScheme}.xlsx`; // Set the file name for download
+                document.body.appendChild(a);
+                a.click();
+                a.remove(); // Remove the anchor element after download
+            })
+            .finally(() => {
+                // Hide loading symbol
+                document.getElementById('loading').style.display = 'none';
+            })
+            .catch(error => {
+                // Log any errors to the console
+                console.error('There has been a problem with your fetch operation:', error);
+                // Hide loading symbol in case of error
+                document.getElementById('loading').style.display = 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>

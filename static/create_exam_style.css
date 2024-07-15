@@ -1,0 +1,433 @@
+/* Importing external CSS resources */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Arimo:700");
+/* The following line is used to measure usage of this code. You can remove it if you want. */
+@import url("https://px.animaapp.com/6671cf36f9e01af754472eb1.6671cf37f9e01af754472eb4.9YCpkTu.hcp.png");
+
+/* Root CSS variables */
+:root {
+  --black: #000000;
+  --burnt-orange: #f98a49;
+  --star-dust: #9b9999;
+  --white: #ffffff;
+  --font-size-m: 30px;
+  --font-family-arimo: "Arimo", Helvetica;
+}
+
+/* Styling for anchor tags within elements with the class 'screen' */
+.screen a {
+  display: contents; /* Ensure the link does not disrupt the layout */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Centering container horizontally */
+.container-center-horizontal {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Arrange children in a row */
+  justify-content: center; /* Center children horizontally */
+  pointer-events: none; /* Disable pointer events */
+  width: 100%; /* Set the width to 100% */
+}
+
+/* Child elements of the horizontally centered container */
+.container-center-horizontal > * {
+  flex-shrink: 0; /* Prevent shrinking */
+  pointer-events: auto; /* Enable pointer events */
+}
+
+/* Vertically align text in the middle */
+.valign-text-middle {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: center; /* Center children vertically */
+}
+
+/* Apply box-sizing to all elements */
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Styling for bold black text with Arimo font */
+.arimo-bold-black-30px {
+  color: var(--black);
+  font-family: var(--font-family-arimo);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Styling for bold star dust colored text with Arimo font */
+.arimo-bold-star-dust-30px {
+  color: var(--star-dust);
+  font-family: var(--font-family-arimo);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Styling for the create-exam-desktop screen */
+.create-exam-desktop {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 832px;
+  padding: 0 30px;
+  width: 1280px;
+}
+
+/* Styling for the question frame */
+.create-exam-desktop .question-frame {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 26px;
+  justify-content: center;
+  position: relative;
+}
+
+/* Styling for the x-frame */
+.create-exam-desktop .x-frame {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 1208px;
+}
+
+/* Styling for the frame-input */
+.create-exam-desktop .frame-input {
+  align-items: flex-end;
+  display: inline-flex;
+}
+
+/* Styling for the title */
+.create-exam-desktop .title {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Styling for the frame-text */
+.create-exam-desktop .frame-text {
+  align-items: center;
+  border: 3px solid;
+  border-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+  display: flex;
+  width: 1208px;
+}
+
+/* Styling for the answer text */
+.create-exam-desktop .answer {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Styling for the Alternative Solution text */
+.create-exam-desktop .alternative-answer {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Styling for the optional text */
+.create-exam-desktop .optional {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin-top: -3px;
+  position: relative;
+  width: 1170px;
+}
+
+/* Styling for the points frame */
+.create-exam-desktop .points-frame {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 1210px;
+}
+
+/* Styling for the points text */
+.create-exam-desktop .points {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Styling for the frame-number */
+.create-exam-desktop .frame-number {
+  align-items: center;
+  border: 3px solid;
+  border-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  width: 1210px;
+}
+
+/* Styling for the add question button */
+.create-exam-desktop .add-question-button {
+  align-items: center;
+  background-color: var(--burnt-orange);
+  border: 3px solid;
+  border-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+  display: flex;
+  gap: 10px;
+  height: 60px;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  width: 1210px;
+  cursor: pointer;
+  margin-top: 10px; /* Add this line */
+}
+
+/* Hover effects for the add question button */
+.create-exam-desktop .add-question-button:hover {
+  background-color: #555f56;
+  border-color: #f98a49;
+  color: #ffffff;
+}
+
+/* Styling for the add question text */
+.create-exam-desktop .add-question {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin-top: -3px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Styling for the button frame */
+.create-exam-desktop .button-frame {
+  align-items: center;
+  display: inline-flex;
+  gap: 208px;
+  justify-content: center;
+  position: relative;
+}
+
+/* Styling for the create frame */
+.create-exam-desktop .create-frame {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  position: relative;
+}
+
+/* Styling for the frame-filename */
+.create-exam-desktop .frame-filename {
+  align-items: center;
+  border: 3px solid;
+  border-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
+/* Styling for the enter title once text */
+.create-exam-desktop .enter-title-once {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin-top: -3px;
+  position: relative;
+  width: 360px;
+}
+
+/* Styling for the create exam button */
+.create-exam-desktop .create-exam-button {
+  align-items: center;
+  background-color: var(--burnt-orange);
+  border: 3px solid;
+  border-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+  display: flex;
+  gap: 10px;
+  height: 80px;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  width: 400px;
+  cursor: pointer;
+}
+
+/* Hover effects for the create exam button */
+.create-exam-desktop .create-exam-button:hover {
+  background-color: #555f56;
+  border-color: #f98a49;
+  color: #ffffff;
+}
+
+/* Styling for the create exam text */
+.create-exam-desktop .create-exam {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Styling for the home button */
+.create-exam-desktop .home-button {
+  align-items: center;
+  background-color: var(--burnt-orange);
+  border: 3px solid;
+  border-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #00000040;
+  display: flex;
+  gap: 10px;
+  height: 80px;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  width: 600px;
+  cursor: pointer;
+}
+
+/* Styling for the home icon */
+.create-exam-desktop .home-button .home-icon {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+}
+
+/* Styling for the hidden home-2 icon */
+.create-exam-desktop .home-button .home-2 {
+  display: none;
+}
+
+/* Hover effects for the home button */
+.create-exam-desktop .home-button:hover {
+  background-color: #555f56;
+  border-color: #f98a49;
+}
+
+/* Hide bx-home-alt on hover */
+.create-exam-desktop .home-button:hover .bx-home-alt {
+  display: none;
+}
+
+/* Show home-2 on hover */
+.create-exam-desktop .home-button:hover .home-2 {
+  display: block;
+}
+
+/* Styling for bx-home-alt icon */
+.create-exam-desktop .bx-home-alt {
+  height: 60px;
+  position: relative;
+  width: 60px;
+}
+
+/* Styling for the place text */
+.create-exam-desktop .place {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Styling for the enter text */
+.create-exam-desktop .enter {
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  margin-top: -3px;
+  position: relative;
+  width: 1170px;
+}
+
+/* Styling for the frame */
+.create-exam-desktop .frame {
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+/* Hover effects for text inside buttons */
+.create-exam-desktop .add-question-button:hover .add-question,
+.create-exam-desktop .create-exam-button:hover .create-exam,
+.create-exam-desktop .home-button:hover .place {
+  color: #ffffff;
+}
+
+/* Styling for the data container */
+.data_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%; /* Ensure the container is as wide as the screen */
+}
+
+/* Styling for the exam data table container */
+.exam-data-table {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Ensure the table container is as wide as the screen */
+}
+
+/* Styling for the exam data table */
+.exam-data-table table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%; /* Ensure the table is as wide as the screen */
+}
+
+/* Styling for table headers and cells */
+.exam-data-table th,
+.exam-data-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+  color: var(--black);
+  font-family: var(--font-family-arimo);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Styling for table headers */
+.exam-data-table th {
+  background-color: #f2f2f2;
+}
+
+/* Add this rule for input fields */
+.create-exam-desktop input {
+  color: var(--black);
+}
