@@ -36,7 +36,7 @@
                 <div class="x-frame">
                     <!-- Heading for the regression model training -->
                     <h1 class="grade-the-following valign-text-middle arimo-bold-black-30px">
-                        Grade the following exercises to train the regression model:
+                        Grade the following exercises to train your grading model:
                     </h1>
                 </div>
                 <div class="x-frame">
@@ -45,7 +45,7 @@
                         <form id="grading-form" action="{{ url_for('create_regression_table') }}" method="POST">
                             {{ grading_df_html_ready|safe }}
                             <button type="submit" class="x-frame-1 x-frame-3 create-regression-model-button">
-                                Create Regression Model
+                                Create Grading Model
                             </button>
                         </form>
                         <!-- Form for adding another training exercise -->
