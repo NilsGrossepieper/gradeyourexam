@@ -629,7 +629,7 @@ def apply_llm():
             grading_scheme_to_use = grading_schemes[1]
 
         # Create input text for the model using the selected grading scheme
-        input_text = f"""You are a teacher grading exam questions, please provide a score from 0 to {row['Points']} for the following student answer, along with a brief feedback. Use the following grading scheme: {grading_scheme_to_use}. Question: {row['Question']}, Student Solution: {row['Student Solution']}, Sample Solution: {row['Solution']}, Cosine Similarity between sample solution and student solution: {row['Cosine Similarity']}, Score:, Feedback:"""
+        input_text = f"""You are a teacher grading exam questions, please provide a score from 0 to {row['Points']} for the following student answer. Use the following grading scheme: {grading_scheme_to_use}. Question: {row['Question']}, Student Solution: {row['Student Solution']}, Sample Solution: {row['Solution']}, Cosine Similarity between sample solution and student solution: {row['Cosine Similarity']}, Score:"""
         
         # Truncate the input text to ensure it does not exceed the token limit
         max_tokens = 924  # 1024 - 100 (to leave space for the model's response)
