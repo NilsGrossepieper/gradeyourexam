@@ -1,3 +1,12 @@
+.evaluate-exam-desktop .supervised-learning {
+  letter-spacing: 1.50px; /* Letter spacing */
+  line-height: 40px; /* Line height */
+  position: relative; /* Relative positioning */
+  text-align: center; /* Center align text */
+  width: fit-content; /* Adjust width based on content */
+  font-size: 24px; /* Adjust font size */
+}
+
 /* Styles for the evaluate-exam-desktop screen */
 .evaluate-exam-desktop {
   align-items: flex-start; /* Align items to the start */
@@ -272,14 +281,6 @@
   padding: 10px; /* Padding inside the container */
   position: relative; /* Relative positioning */
   width: 220px; /* Fixed width */
-}
-
-.evaluate-exam-desktop .supervised-learning {
-  letter-spacing: 1.50px; /* Letter spacing */
-  line-height: 40px; /* Line height */
-  position: relative; /* Relative positioning */
-  text-align: center; /* Center align text */
-  width: fit-content; /* Adjust width based on content */
 }
 
 .evaluate-exam-desktop .work-in-progress-container {
