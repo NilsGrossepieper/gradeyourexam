@@ -483,3 +483,12 @@ body {
   color: #FFFFFF; /* Change text color to white on hover */
   border-color: #F98A49; /* Change border color on hover */
 }
+
+/* Additional styling for the LLM button */
+.llm-button-frame .llm-button {
+  width: 200px; /* Set fixed width */
+  height: 200px; /* Set fixed height */
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center align child items vertically */
+  justify-content: center; /* Center align child items horizontally */
+}
