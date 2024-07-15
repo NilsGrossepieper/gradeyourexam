@@ -65,6 +65,15 @@
                 <img src="{{ url_for('plot_png') }}" alt="Regression Plot" style="width: 1240px; height: 620px;">
             </div>
 
+            <!-- LLM Button Position -->
+            <div class="llm-button-frame" style="text-align: center; margin-top: 20px;">
+                <div class="x-frame-2 x-frame-3 llm-button" onclick="handleLLMClick(this)" style="display: inline-block;">
+                    <div class="text">
+                        <div class="llm arimo-bold-black-30px">Explain Results With LLM</div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Frame for action buttons and instructions -->
             <div class="button-frame">
                 <div class="information-frame">
@@ -75,7 +84,9 @@
                 <div class="button-container">
                     <!-- Home button with hover effect -->
                     <a href="{{ url_for('main_index') }}" class="x-frame-2 x-frame-3 button-hover home-button">
-                        <div class="text"><div class="place valign-text-middle arimo-bold-black-30px">Home</div></div>
+                        <div class="text">
+                            <div class="place valign-text-middle arimo-bold-black-30px">Home</div>
+                        </div>
                         <img class="bx-home-alt" src="{{ url_for('static', filename='images/home-1.png') }}" alt="bx-home-alt" />
                         <img class="bx-home-alt-hover" src="{{ url_for('static', filename='images/home-2.png') }}" alt="home-2" />
                     </a>
@@ -86,7 +97,9 @@
                         <input type="hidden" name="naming_scheme" value="full_points">
                         <input type="hidden" name="llm_true" id="llm_true" value="false">
                         <button type="submit" class="x-frame-2 x-frame-3 button-hover">
-                            <div class="text"><div class="full-points valign-text-middle arimo-bold-black-30px">Full Points</div></div>
+                            <div class="text">
+                                <div class="full-points valign-text-middle arimo-bold-black-30px">Full Points</div>
+                            </div>
                         </button>
                     </form>
                     <form id="half-points-form" action="{{ url_for('apply_download_regression') }}" method="POST" class="grading-form" onsubmit="showLoading()">
@@ -94,7 +107,11 @@
                         <input type="hidden" name="naming_scheme" value="half_points">
                         <input type="hidden" name="llm_true" id="llm_true" value="false">
                         <button type="submit" class="x-frame-2 x-frame-3 button-hover">
-                            <div class="text"><div class="frame-16"><div class="half-points valign-text-middle arimo-bold-black-30px">Half Points</div></div></div>
+                            <div class="text">
+                                <div class="frame-16">
+                                    <div class="half-points valign-text-middle arimo-bold-black-30px">Half Points</div>
+                                </div>
+                            </div>
                         </button>
                     </form>
                     <form id="quarter-points-form" action="{{ url_for('apply_download_regression') }}" method="POST" class="grading-form" onsubmit="showLoading()">
@@ -102,16 +119,13 @@
                         <input type="hidden" name="naming_scheme" value="quarter_points">
                         <input type="hidden" name="llm_true" id="llm_true" value="false">
                         <button type="submit" class="x-frame-2 x-frame-3 button-hover">
-                            <div class="text"><div class="frame-16"><div class="quarter-points valign-text-middle arimo-bold-black-30px">Quarter<br />Points</div></div></div>
+                            <div class="text">
+                                <div class="frame-16">
+                                    <div class="quarter-points valign-text-middle arimo-bold-black-30px">Quarter<br />Points</div>
+                                </div>
+                            </div>
                         </button>
                     </form>
-
-                    <!-- Button for applying LLM (Large Language Model) -->
-                    <div class="x-frame-2 x-frame-3 llm-button" onclick="handleLLMClick(this)">
-                        <div class="text"><div class="llm valign-text-middle arimo-bold-black-30px">LLM</div></div>
-                        <img class="robot" src="{{ url_for('static', filename='images/robot-1.png') }}" alt="robot" />
-                        <img class="robot-hover" src="{{ url_for('static', filename='images/robot-2.png') }}" alt="robot-3" />
-                    </div>
                 </div>
             </div>
         </div>
@@ -176,7 +190,7 @@
                     const url = window.URL.createObjectURL(new Blob([blob]));
                     const a = document.createElement('a');
                     a.href = url;
-                    a.download = `${formData.get('naming_scheme')}.xlsx`; // Set the file name for download
+                    a.download = formData.get('naming_scheme') + '.xlsx'; // Set the file name for download
                     document.body.appendChild(a);
                     a.click();
                     a.remove(); // Remove the anchor element after download

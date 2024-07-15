@@ -329,11 +329,15 @@
   line-height: 40px; /* Set line height */
   margin-top: -1px; /* Adjust top margin */
   position: relative; /* Relative positioning */
-  white-space: nowrap; /* Prevent text wrapping */
-  width: fit-content; /* Fit width to content */
+  white-space: normal; /* Allow text wrapping */
+  text-align: center; /* Center align text */
   font-family: 'Arimo', sans-serif; /* Apply font family */
-  font-size: 30px; /* Set font size */
+  font-size: 24px; /* Set font size */
   font-weight: bold; /* Set font weight */
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center child items vertically */
+  justify-content: center; /* Center child items horizontally */
+  height: 100%; /* Full height of container */
 }
 
 /* Styling for robot icon */
