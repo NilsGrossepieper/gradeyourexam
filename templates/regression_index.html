@@ -45,7 +45,7 @@
                         <form id="grading-form" action="{{ url_for('create_regression_table') }}" method="POST">
                             {{ grading_df_html_ready|safe }}
                             <button type="submit" class="x-frame-1 x-frame-3 create-regression-model-button">
-                                Create Grading Model
+                                Create a Grading Model
                             </button>
                         </form>
                         <!-- Form for adding another training exercise -->
@@ -69,12 +69,12 @@
             <div class="llm-button-frame" style="text-align: center; margin-top: 20px;">
                 <div class="information-frame">
                     <p class="select-the-value-to valign-text-middle arimo-bold-black-30px">
-                        Optionally click on "Explain Results with LLM" to have your results explained by a large language model.  
+                        Optionally click on "Explain Results using LLM" to have your results explained by a large language model.  
                     </p>
                 </div>
                 <div class="x-frame-2 x-frame-3 llm-button" onclick="handleLLMClick(this)" style="display: inline-block;">
                     <div class="text">
-                        <div class="llm arimo-bold-black-30px">Explain Results with LLM</div>
+                        <div class="llm arimo-bold-black-30px">Explain Results using LLM</div>
                     </div>
                 </div>
             </div>
