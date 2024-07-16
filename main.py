@@ -1090,7 +1090,7 @@ def apply_download_regression():
     return send_file(
         excel_buffer,
         as_attachment=True,
-        download_name=f'regression_grading_{naming_scheme}.xlsx',
+        download_name=f'similarity_grading_{naming_scheme}.xlsx',
         mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     )
 
