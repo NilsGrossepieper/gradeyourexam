@@ -792,12 +792,12 @@ def apply_model_regression():
     temp_df = temp_df[temp_df['Student Solution'] != '']
     
     # Split the data for grading based on the number of rows
-    if temp_df.shape[0] < 5:
+    if temp_df.shape[0] < 2:
         grading_df = temp_df.copy()
         temp_df = temp_df.drop(grading_df.index)
         grading_df = grading_df.sample(frac=1).reset_index(drop=True)
     else:
-        grading_df = temp_df.sample(5)
+        grading_df = temp_df.sample(2)
         temp_df = temp_df.drop(grading_df.index)
         
     # Select necessary columns for grading_df and temp_df

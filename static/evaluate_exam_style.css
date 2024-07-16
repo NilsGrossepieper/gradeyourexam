@@ -1,4 +1,5 @@
-.evaluate-exam-desktop .supervised-learning {
+.evaluate-exam-desktop .supervised-learning,
+.evaluate-exam-desktop .large-language-model {
   letter-spacing: 1.50px; /* Letter spacing */
   line-height: 40px; /* Line height */
   position: relative; /* Relative positioning */
@@ -116,7 +117,7 @@
 .evaluate-exam-desktop .add-question-button:hover .upload,
 .evaluate-exam-desktop .home-button:hover .place,
 .evaluate-exam-desktop .work-in-progress-container:hover .place,
-.evaluate-exam-desktop .button-frame-item:hover .llm,
+.evaluate-exam-desktop .button-frame-item:hover .large-language-model,
 .evaluate-exam-desktop .button-frame-item:hover .supervised-learning,
 .evaluate-exam-desktop .button-frame-item:hover .text {
   color: #ffffff; /* White text on hover */
@@ -248,15 +249,6 @@
   width: fit-content; /* Adjust width based on content */
   color: black; /* Text color */
   text-align: center; /* Center align text */
-}
-
-.evaluate-exam-desktop .llm {
-  letter-spacing: 1.50px; /* Letter spacing */
-  line-height: 40px; /* Line height */
-  margin-top: -1.00px; /* Adjust margin */
-  position: relative; /* Relative positioning */
-  white-space: nowrap; /* Prevent text wrapping */
-  width: fit-content; /* Adjust width based on content */
 }
 
 .evaluate-exam-desktop .robot {
