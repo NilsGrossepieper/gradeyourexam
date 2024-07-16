@@ -664,9 +664,8 @@ def apply_llm():
     # Sort by 'Surname', 'First Name' and 'Identification'
     evaluation_data = evaluation_data.sort_values(by=['Surname', 'First Name', 'Identification'])
 
-
     # Rearrange the columns as desired
-    evaluation_data_export = evaluation_data[['First Name', 'Surname', 'Student ID', 'Question', 'Points', 'Solution', 'Student Solution', 'Points for Student Answer', 'Feedback']]
+    evaluation_data_export = evaluation_data[['Surname', 'First Name', 'Student ID', 'Question', 'Points', 'Solution', 'Student Solution', 'Points for Student Answer', 'Feedback']]
 
     # Create a BytesIO object to hold the Excel data
     excel_buffer = BytesIO()
