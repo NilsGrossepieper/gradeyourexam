@@ -1064,6 +1064,22 @@ def apply_download_regression():
             answer_start = generated_text.find(input_text) + len(input_text)
             answer = generated_text[answer_start:].strip()
 
+            def clean_answer(answer):
+                # Search for the last period in the answer
+                last_period_index = answer.rfind('.')
+    
+                # Check if the last period is followed by a space and a capital letter
+                if last_period_index != -1:
+                    answer = answer[:last_period_index + 1]
+                else:
+                # If no period is found, add a period at the end of the answer
+                    answer = answer.rstrip() + '.'
+    
+                return answer
+        
+            # Clean the generated answer
+            answer = clean_answer(answer)
+
             # Add the generated feedback to the evaluation data
             evaluation_data_export_reg.at[index, 'Feedback'] = answer
         
