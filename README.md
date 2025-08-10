@@ -1,6 +1,6 @@
 # gradeyourexam.com
 
-![gif_gradeyourexam](.anima/gif_gradeyourexam.gif)  
+![gif_gradeyourexam](docs/gif_gradeyourexam.gif)  
 *Demonstration of gradeyourexam.com*
 
 ---
