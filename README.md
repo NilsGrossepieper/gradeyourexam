@@ -2,21 +2,35 @@
 
 ---
 
-## 📌 Description
-**gradeyourexam.com** is a web application that allows teachers to create, upload, and grade exams automatically using AI-powered evaluation methods.
+**gradeyourexam.com** was a university course project that enabled teachers to create, upload, and grade exams automatically using AI-powered evaluation methods.  
+The project required hosting a large model (*Llama 3 8B*), which made long-term deployment costly.  
+As a result, the live site is no longer running, but the repository and documentation remain for reference.
 
 ---
 
-## ✨ Features
-- **Exam Creation & Upload** – Create exams directly on the platform, upload completed exams for automated grading.  
-- **AI-Powered Comparison** – A text embedding model compares the similarity between the sample solution and each student's answer for objective evaluation.  
-- **Flexible Grading Schemes** – Choose from different grading methods and download student scores.  
+## 📌 What this is
+- Web-based platform for automated exam grading  
+- AI-powered similarity scoring between answers and sample solutions  
+- Flexible grading schemes including LLM-based evaluation  
+- University course project (archived)  
 
 ---
 
-## 📝 Grading Methods
-- **LLM-Based Grading** – Uses the *Llama 3 8B* model for detailed and nuanced grading.  
-- **Similarity Score Grading** – Train a custom ML model to grade based on similarity scores between student responses and the sample solution.  
+## 🎯 What it does
+- Allows teachers to **create and upload exams**  
+- Compares student answers to sample solutions using embeddings  
+- Supports **LLM-based** and **similarity-score-based** grading methods  
+- Generates downloadable score sheets  
+
+---
+
+## 🚀 How to use
+
+**Requirements:** Python **3.10+**
+
+**Install dependencies:**
+```bash
+pip install -r requirements.txt
 
 ---
 
