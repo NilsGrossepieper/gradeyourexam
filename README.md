@@ -1,5 +1,8 @@
 # gradeyourexam.com
 
+![gif_gradeyourexam](.anima/gif_gradeyourexam.gif)  
+*Demonstration of gradeyourexam.com*
+
 ---
 
 **gradeyourexam.com** was a university course project that enabled teachers to create, upload, and grade exams automatically using AI-powered evaluation methods.  
