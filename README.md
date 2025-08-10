@@ -3,7 +3,7 @@
 ---
 
 **gradeyourexam.com** was a university course project that enabled teachers to create, upload, and grade exams automatically using AI-powered evaluation methods.  
-The project required hosting a large model (*Llama 3 8B*), which made long-term deployment costly.  
+The project required hosting two large model (*Llama 3 8B* and *all-MiniLM-L6-v2*), which made long-term deployment costly.  
 As a result, the live site is no longer running, but the repository and documentation remain for reference.
 
 ---
@@ -31,6 +31,15 @@ As a result, the live site is no longer running, but the repository and document
 **Install dependencies:**
 ```bash
 pip install -r requirements.txt
+```
+
+**Run the application:**
+```bash
+python main.py
+```
+
+💡 The application will start a local server — open the displayed URL in your browser to access the platform.
+Note: Hosting both a Llama 3 8B and a all-MiniLM-L6-v2 model requires significant resources; you may need to adjust the configuration for local testing.
 
 ---
 
